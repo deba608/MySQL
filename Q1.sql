@@ -1,35 +1,27 @@
 CREATE DATABASE T1;
 USE T1;
 
-Create Table students(
+CREATE TABLE students(
  id INT PRIMARY KEY,
- name varchar(50) NOT NULL,
+ name VARCHAR(50) NOT NULL,
  age INT NOT NULL,
- grade varchar(1) NOT NULL
- );
+ grade VARCHAR(1) NOT NULL
+);
 
-INSERT INTO students(id, name, age,grade)
+INSERT INTO students(id, name, age, grade)
 VALUES
-(1236, 'Debashish', 22,'A'),
-(1235, 'Ashish', 20,'B'),
-(1237, 'MRD', 19,'A');
+(1, 'Debashish', 22, 'A'),
+(2, 'Ashish', 20, 'B'),
+(3, 'MRD', 19, 'A');
 
-INSERT INTO students (id, name, age, grade)
-VALUES
-(2, 'Ram', 15, 'B'),
-(3, 'Ak', 12, 'B'),
-(4, 'Satwik', 21, 'B');
+SELECT * FROM students
+WHERE age > 18;
 
-select * from students
-where age > 17;
+UPDATE students
+SET grade = 'A'
+WHERE id = 2;
 
-select * from students;
+DELETE FROM students
+WHERE id = 3;
 
-update students 
-set grade = 'A'
-where id = 2;
-
-delete from students 
-where id =3;
-
-select * from students;
+SELECT * FROM students;
